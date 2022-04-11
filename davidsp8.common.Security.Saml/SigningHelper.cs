@@ -21,8 +21,11 @@ namespace davidsp8.common.Security.Saml {
         /// <returns></returns>
         public static XmlElement SignDoc(XmlDocument doc, X509Certificate2 cert2, string referenceId, string referenceValue) {
             SamlSignedXml sig = new SamlSignedXml(doc, referenceId);
+            
             // Add the key to the SignedXml xmlDocument. 
-            sig.SigningKey = cert2.PrivateKey;
+            sig.SigningKey = cert2.GetRSAPrivateKey();
+
+            sig.SignedInfo.CanonicalizationMethod = SignedXml.XmlDsigExcC14NTransformUrl;
 
             // Create a reference to be signed. 
             Reference reference = new Reference();
@@ -33,7 +36,7 @@ namespace davidsp8.common.Security.Saml {
             // Add an enveloped transformation to the reference. 
             XmlDsigEnvelopedSignatureTransform env = new
                 XmlDsigEnvelopedSignatureTransform();
-            XmlDsigC14NTransform env2 = new XmlDsigC14NTransform();
+            XmlDsigExcC14NTransform env2 = new XmlDsigExcC14NTransform();            
  
             reference.AddTransform(env);
             reference.AddTransform(env2);

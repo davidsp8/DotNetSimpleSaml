@@ -19,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "davidsp8.windows.PostSamlAs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "davidsp8.common.Security.Saml20", "davidsp8.common.Security.Saml20\davidsp8.common.Security.Saml20.csproj", "{36B3D8EE-0808-49F9-BB61-CCFD93B11DA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "davidsp8.common.Security.Saml11", "davidsp8.common.Security.Saml11\davidsp8.common.Security.Saml11.csproj", "{83C10451-89AD-4246-A44C-830E7E2D13EB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "davidsp8.common.Security.Saml", "davidsp8.common.Security.Saml\davidsp8.common.Security.Saml.csproj", "{B77C26C7-B10D-471B-B2C0-24788408981A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "davidsp8.web.PostSamlAssertion", "davidsp8.web.PostSamlAssertion\davidsp8.web.PostSamlAssertion.csproj", "{A827C628-3D1F-4FD1-ACA4-9544FADE7B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "davidsp8.common.Security.Saml11", "davidsp8.common.Security.Saml11\davidsp8.common.Security.Saml11.csproj", "{83C10451-89AD-4246-A44C-830E7E2D13EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,6 @@ Global
 		{36B3D8EE-0808-49F9-BB61-CCFD93B11DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36B3D8EE-0808-49F9-BB61-CCFD93B11DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36B3D8EE-0808-49F9-BB61-CCFD93B11DA9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B77C26C7-B10D-471B-B2C0-24788408981A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B77C26C7-B10D-471B-B2C0-24788408981A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B77C26C7-B10D-471B-B2C0-24788408981A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{A827C628-3D1F-4FD1-ACA4-9544FADE7B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A827C628-3D1F-4FD1-ACA4-9544FADE7B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A827C628-3D1F-4FD1-ACA4-9544FADE7B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C10451-89AD-4246-A44C-830E7E2D13EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

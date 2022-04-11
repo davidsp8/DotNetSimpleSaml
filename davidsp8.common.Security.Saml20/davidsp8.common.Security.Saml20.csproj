@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ILRepack.2.0.18\build\ILRepack.props" Condition="Exists('..\packages\ILRepack.2.0.18\build\ILRepack.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -33,6 +34,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,6 +80,7 @@
     <Compile Include="SamlSchemas.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Schemas\RunXsd.bat" />
     <None Include="Schemas\saml-schema-assertion-2.0.xsd" />
     <None Include="Schemas\saml-schema-protocol-2.0.xsd" />
@@ -105,9 +109,13 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>REM "C:\Program Files\Microsoft\ILMerge\ilmerge" /out:$(TargetDir)davidsp8.common.Security.Saml.All.dll $(OutDir)davidsp8.common.Security.Saml.dll $(TargetDir)davidsp8.common.Security.Saml11.dll $(TargetDir)davidsp8.common.Security.Saml20.dll
-REM del $(TargetDir)davidsp8.common.Security.Saml.dll 
-REM del $(TargetDir)davidsp8.common.Security.Saml11.dll 
-REM del $(TargetDir)davidsp8.common.Security.Saml20.dll</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)packages\ILRepack.2.0.18\tools\ILRepack.exe" /out:$(SolutionDir)Assemblies\davidsp8.common.Security.Saml.All.dll $(SolutionDir)davidsp8.common.Security.Saml\$(OutDir)davidsp8.common.Security.Saml.dll $(SolutionDir)davidsp8.common.Security.Saml11\$(OutDir)davidsp8.common.Security.Saml11.dll $(SolutionDir)davidsp8.common.Security.Saml20\$(OutDir)davidsp8.common.Security.Saml20.dll
+</PostBuildEvent>
   </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ILRepack.2.0.18\build\ILRepack.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.2.0.18\build\ILRepack.props'))" />
+  </Target>
 </Project>
