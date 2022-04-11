@@ -46,9 +46,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="davidsp8.common.Security.Saml.All, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Runtime\davidsp8.common.Security.Saml.All.dll</HintPath>
+    <Reference Include="davidsp8.common.Security.Saml.All">
+      <HintPath>..\Assemblies\davidsp8.common.Security.Saml.All.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
